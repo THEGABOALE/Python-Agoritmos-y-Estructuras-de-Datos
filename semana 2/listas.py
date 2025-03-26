@@ -9,7 +9,7 @@ for i in range(3):
     print(f"\nIngrese el nombre del empleado {i+1}: ",end='')
     nombre = input()
     tablaEmpleados.append(nombre)
-   
+
 for fil in range(3):
     fila = []
     for col in range(3):
@@ -19,7 +19,7 @@ for fil in range(3):
     tablaVentas.append(fila)
 
 print("\nEmpleados: ", tablaEmpleados)
-print("\n Ventas: ",tablaVentas)
+print("\nVentas: ",tablaVentas)
 
 print("\nInformación de Ventas")
 print("Nombre\tEnero\tFebrero\tMarzo")
