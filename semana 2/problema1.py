@@ -32,11 +32,32 @@ def eliminar_productos(lista_menu):
             print(f"{producto} no encontrado.")
 
 def modificar_productos(lista_menu):
+    producto = input("\nIngrese el nombre del producto que desea modificar: ")
+    for producto in lista_menu:
+        print("1. Modificar nombre del producto")
+        print("2. Modificar código del producto")
+        print("3. Modificar precio del producto")
+        opciones = input("\nSeleccione que desea modificar: ")
+        if opciones == '1':
+            producto['nombre'] = input("\nIngrese el nuevo nombre del producto: ")
+        elif opciones == '2':
+            producto['codigo'] = int(input("\nIngrese el nuevo código del producto: "))
+        elif opciones == '3':
+            producto['precio'] = float(input("\nIngrese el nuevo precio del producto: "))
+    print("Producto modificado correctamente.")
+    
         
 
 def consultar_productos(lista_menu):
-    
-
+    producto = input("\nIngrese el nombre del producto que desea consultar: ")
+    for producto in lista_menu:
+        if producto['nombre'] == producto:
+            print("\nSu producto ha sido encontrado: {producto}")
+            return
+        else: 
+            print("\nProducto no encontrado.")
+            
+        
 
 def mostrar_productos(lista_menu):
 
@@ -60,4 +81,3 @@ while True:
         break
     else:
         print("Opción inválida, por favor inténtelo de nuevo.")
-        return
