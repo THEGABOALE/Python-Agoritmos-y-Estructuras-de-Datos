@@ -7,7 +7,7 @@ print("\n==Nota final de la asignatura==",end="\n")
 print("\nIngrese la cantidad de estudiantes a evaluar: ",end='')
 numestudiantes = int(input())
 for contador in range(numestudiantes):
-    print(f"\nIngrese el nombre del estudiante{contador+1}: ",end='')
+    print(f"\nIngrese el nombre del estudiante {contador+1}: ",end='')
     nombre = input()
     print(f"\nIngrese la nota del primer corte del estudiante {contador+1}: ",end='')
     nota1 = float(input())
@@ -19,7 +19,7 @@ for contador in range(numestudiantes):
     promedio = (nota1 + nota2 + nota3)/3
     print(f"\nPromedio de notas de los tres cortes del estudiante {contador+1}: {promedio:.2f}")
 
-    if promedio < 69:
+    if promedio < 70:
         print(f"\n{nombre} ha reprobado.")
     elif promedio >= 70 and promedio <=79:
         print(f"\nEl rendimiento de {nombre} es regular.")
