@@ -9,5 +9,7 @@ def resgistrar_categoria(categorias):
         print("Esta categoría ya existe.")
 
 def agregar_gastos(categorias, gastos):
-    
+    if not categorias:
+        print("No hay ninguna categoría. Primero registre una y vuelva a intentarlo más tarde.")
+        
     
