@@ -4,3 +4,6 @@ conexión a internet, alquiler, entre otros.'''
 
 categoria = []
 gastos = []
+
+def main():
+    
