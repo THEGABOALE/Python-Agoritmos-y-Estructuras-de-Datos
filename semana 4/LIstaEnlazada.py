@@ -8,10 +8,24 @@ class ListaEnlazada:
         self.inicio = None
     
     def agregar(self, dato):
-    
-    
+        nuevo = Nodo(dato)
+        if self.inicio is None:
+            self.inicio = nuevo
+        else:
+            actual = self.inicio
+        while actual.siguiente:
+            actual = actual.siguiente
+        actual.siguiente = nuevo
+              
     def imprimir(self):
-
+        actual = self.inicio
+        if actual is None:
+            print("La lista está vacía")
+        else:
+            print("Elementos de la Lista Enlazada")
+            while actual:
+                print(f" -> {actual.dato}")
+                actual = actual.siguiente
 
 def menu():
     lista = ListaEnlazada
