@@ -1,6 +1,6 @@
 class Nodo:
     def __init__(self, dato):
-        self.__dato = dato
+        self.dato = dato
         self.siguiente = None #None significa nulo
 
 class ListaEnlazada:
@@ -13,9 +13,9 @@ class ListaEnlazada:
             self.inicio = nuevo
         else:
             actual = self.inicio
-        while actual.siguiente:
-            actual = actual.siguiente
-        actual.siguiente = nuevo
+            while actual.siguiente:
+                actual = actual.siguiente
+            actual.siguiente = nuevo
               
     def imprimir(self):
         actual = self.inicio
@@ -28,7 +28,7 @@ class ListaEnlazada:
                 actual = actual.siguiente
 
 def menu():
-    lista = ListaEnlazada
+    lista = ListaEnlazada()
     while True:
         print("Menú de opciones")
         print("1. Agregar")
@@ -40,7 +40,7 @@ def menu():
         print("Elija su opción: ", end = '')
         opcion = int(input())
         
-        if opcion == '1':
+        if opcion == 1:
             try:
                 print("Ingrese un número entero: ", end = '')
                 dato = int(input())
@@ -48,9 +48,9 @@ def menu():
                 print("Elemento agregado.")
             except ValueError:
                 print("Elemento no agregado.")
-        elif opcion == '5':
-            lista.imprimir
-        elif opcion == '6':
+        elif opcion == 5:
+            lista.imprimir()
+        elif opcion == 6:
             print("Salida del programa")
             break
         else:
