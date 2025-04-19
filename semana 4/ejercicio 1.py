@@ -50,10 +50,8 @@ def menu():
         print("Menú de opciones")
         print("1. Agregar")
         print("2. Eliminar")
-        print("3. Buscar")
-        print("4. Modificar")
-        print("5. Imprimir")
-        print("6. Salir")
+        print("3. Imprimir")
+        print("4. Salir")
         print("Elija su opción: ", end = '')
         opcion = int(input())
         
@@ -73,9 +71,9 @@ def menu():
                 print("Eliminación completada correctamente.")
             except ValueError:
                 print("Entrada inválida.")
-        elif opcion == 5:
+        elif opcion == 3:
             lista.imprimir()
-        elif opcion == 6:
+        elif opcion == 4:
             print("Salida del programa")
             break
         else:
