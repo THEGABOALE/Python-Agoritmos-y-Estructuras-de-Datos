@@ -114,7 +114,7 @@ def menu():
                 lista.imprimeInverso(p)
             except ValueError:
                 print("Posición no válida.")
-        elif opcion == 5:
+        elif opcion == 6:
             print("Salida del programa")
             break
         else:
