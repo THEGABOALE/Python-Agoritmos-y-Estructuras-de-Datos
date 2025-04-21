@@ -1,7 +1,9 @@
-class Nodo:
-    def __init__(self, dato):
-        self.dato = dato
+class Nodo: #Se define la clase Nodo. Representa cada elemento individual en la lista enlazada.
+    def __init__(self, dato): #Método constructor (__init__) al iniciar una nueva instancia. Recibe un dato.
+        self.dato = dato #Almacena el dato proporcionado en el atributo dato del nodo.
         self.siguiente = None #None significa Nulo
+        '''Inicializa el atributo siguiente con None, lo que indica que este nodo no apunta a ningún 
+        otro nodo aún (es el final de la lista por ahora).'''
 
 class ListaEnlazada:
     def __init__(self):
