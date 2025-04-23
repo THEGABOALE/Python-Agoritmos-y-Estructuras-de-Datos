@@ -5,18 +5,20 @@ class Nodo: #Se define la clase Nodo. Representa cada elemento individual en la 
         '''Inicializa el atributo siguiente con None, lo que indica que este nodo no apunta a ningún 
         otro nodo aún (es el final de la lista por ahora).'''
 
-class ListaEnlazada:
-    def __init__(self):
-        self.inicio = None
+class ListaEnlazada: #Se define la clase de Lista Enlazada, que representa toda la lista como tal.
+    def __init__(self): #Constructor de la clase.
+        self.inicio = None #Inicializa la lista con inicio = None, lo que significa que al principio la lista está vacía.
     
-    def agregar(self, dato):
-        nuevo = Nodo(dato)
-        if self.inicio is None:
-            self.inicio = nuevo
+    def agregar(self, dato): #Se define el método para agregar elementos al final de la lista.
+        nuevo = Nodo(dato) #Crea un nuevo nodo con el dato proporcionado.
+        if self.inicio is None: #Verifica si la lista está vacía.
+            self.inicio = nuevo #Si está vacía, el nuevo nodo se convierte en el primer nodo de la lista.
         else:
-            actual = self.inicio
+            actual = self.inicio 
+        #Si ya hay datos se inicializa una variable actual apuntando al primer nodo.
             while actual.siguiente:
                 actual = actual.siguiente
+            #
             actual.siguiente = nuevo
               
     def imprimir(self):
