@@ -30,7 +30,7 @@ def menu():
         print("6. Salir del programa")
         print("\n----------------------\n")
         
-        opcion = int(input("\nSeleccione una de las siguienes opciones: \n"))
+        opcion = int(input("\nSeleccione una de las siguienes opciones: "))
         if opcion == 1:
             if len(cola.lista) < 5:
                 nombre = input("Ingrese el nombre del cliente: ")
