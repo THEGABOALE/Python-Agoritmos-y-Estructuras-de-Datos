@@ -15,7 +15,7 @@ class Clinica:
             print("\nNo hay pacientes en la lista de espera.")
     
     def imprimir(self):
-        if self.pacientes:
+        if self.pacientes:  
             print("\nLista de pacientes en espera de atención")
             for i, paciente in enumerate(self.pacientes, start = 1):   
                 print(f"{i}. {paciente}")
