@@ -5,6 +5,9 @@ class Estudiante:
         self.Carrera=Carrera
         self.Nota_Final=Nota_Final
         
+    def __str__(self):
+        return f"ID: {self.ID}, Nombre: {self.Nombre}, Carrera: {self.Carrera}, Nota Final: {self.Nota_Final}"
+        
 class Nodoarbol:
     def __init__(self,estudiante):
         self.estudiante=estudiante
@@ -16,14 +19,14 @@ class Arbolbinariobusqueda:
         self.raiz=None
         
     def insertar(self, estudiante):
-        nuevo_nodo: Nodoarbol = Nodo(estudiante)
+        nuevo_nodo: Nodoarbol = Nodoarbol(estudiante)
         if self.raiz is None:
             self.raiz = nuevo_nodo
             return
         self.insertar_aux(self.raiz, nuevo_nodo)
     
     def insertar_aux(self, actual, nuevo_nodo):
-        if nuevo_nodo.estudiante < actual.estudiante.ID:
+        if nuevo_nodo.estudiante.ID < actual.estudiante.ID:
             if actual.izquierda is None:
                 actual.izquierda = nuevo_nodo
             else:
@@ -37,7 +40,7 @@ class Arbolbinariobusqueda:
     def buscar(self,ID):
         pass
     def recorrer_inorden(self):
-        self.aux_eliminar(self.raiz)
+        self.aux_inorden(self.raiz)
         
     def aux_inorden(self, nodo):
         if nodo is not None:
@@ -58,7 +61,7 @@ class Arbolbinariobusqueda:
             actual.derecha = self.aux_eliminar(actual.derecha, estudiante)
         else:
             #Caso1
-            if not actual.izquierda and actual.derecha:
+            if not actual.izquierda and not actual.derecha:
                 return None
             #Caso 2
             elif not actual.derecha:
@@ -77,19 +80,17 @@ class Arbolbinariobusqueda:
             actual = actual.izquierda
         return actual
 
-lestudiante = [1, "Maria", "Sistemas", 80]
-
-id = int(input("="))
-nombre = input("=")
-Carre = input("=")
-Nota_Final = int(input("="))
-
-Est: estudiante = estudiante(id, nombre, Carre, Nota_Final)
-
-Est = (id, nombre, Carre, Nota_Final)
+Estudiantes = {
+    Estudiante(1, "Gabriel", "Sistemas", 90),
+    Estudiante(2, "Joha", "Industrial", 70),
+    Estudiante(3, "Nicolas", "Diseño", 60),
+    Estudiante(4, "Valeria", "Marketing", 80)
+}
 
 cl = Arbolbinariobusqueda()
 
-cl.insertar(Est)
+for est in Estudiantes:
+    cl.insertar(est)
 
-print (lestudiante)
+print("-----Recorrido en Inorden----")
+cl.recorrer_inorden()
