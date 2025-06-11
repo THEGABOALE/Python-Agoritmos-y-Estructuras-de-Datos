@@ -37,8 +37,12 @@ class Arbolbinariobusqueda:
             else:
                 self.insertar_aux(actual.derecha, nuevo_nodo)
                 
-    def buscar(self,ID):
+    def buscar(self, ID):
         pass
+    
+    def aux_buscar(self, ID):
+        pass
+    
     def recorrer_inorden(self):
         self.aux_inorden(self.raiz)
         
@@ -48,7 +52,7 @@ class Arbolbinariobusqueda:
             print(nodo.estudiante)
             self.aux_inorden(nodo.derecha)
     
-    def eliminar(self,estudiante):
+    def eliminar(self, estudiante):
         self.raiz = self.aux_eliminar(self.raiz, estudiante)
         
     def aux_eliminar(self, actual, estudiante):
